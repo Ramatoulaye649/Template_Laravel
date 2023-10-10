@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EtudiantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +13,6 @@ use App\Http\Controllers\EtudiantController;
 |
 */
 
-Route::get('/supprimer-etudiant/{id}', [EtudiantController::class, 'supprimer_etudiant']);
-Route::get('/modifier-etudiant/{id}', [EtudiantController::class, 'modifier_etudiant'])->name('modifier-etudiant');
-Route::post('/modifier/traitement', [EtudiantController::class, 'modifier_etudiant_traitement'])->name('modifier-etudiant-traitement');
-Route::get('/etudiant', [EtudiantController::class, 'liste_etudiant']);
-Route::get('/ajouter', [EtudiantController::class, 'ajouter_etudiant']);
-Route::post('/ajouter/traitement', [EtudiantController::class, 'ajouter_etudiant_traitement']);
+Route::get('/', function () {
+    return view('layouts.modals');
+});
